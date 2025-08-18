@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Aggregator</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <h1>News Aggregator</h1>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" id="search" placeholder="Search news...">
+    <div id="suggestions" class="suggestions"></div>
+    <button id="search-btn">Search</button>
+  </div>
+
+  <!-- Categories -->
+  <div class="categories">
+    <button data-topic="general">📰 General</button>
+    <button data-topic="sports">⚽ Sports</button>
+    <button data-topic="technology">💻 Technology</button>
+    <button data-topic="entertainment">🎬 Entertainment</button>
+  </div>
+
+  <!-- Main News Container -->
+  <div id="news-container" class="news-container"></div>
+  <script src="script.js"></script>
+</body>
+</html>
