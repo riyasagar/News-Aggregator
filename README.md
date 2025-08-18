@@ -5,7 +5,7 @@
 ---
 
 ## Features
--Live News Fetching: Pulls the latest news using the GNews API.
+- Live News Fetching: Pulls the latest news using the GNews API.
 - Search news by keywords  
 - Filter news by categories: General, Sports, Technology, Entertainment  
 - Trending news highlights  
