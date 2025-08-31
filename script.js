@@ -1,4 +1,4 @@
-const API_KEY = '2dd67da342577a207e6322bc4248e442'; // Replace with your GNews API key
+const API_KEY = '2dd67da342577a207e6322bc4248e442'; 
 const BASE_URL = 'https://gnews.io/api/v4';
 
 async function fetchNews(query = '', topic = '') {
