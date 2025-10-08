@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>News Aggregator</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
   <!-- Header -->
   <div class="header">
-    <h1>News Aggregator</h1>
+    <h1>📰 News Aggregator</h1>
+    <button id="toggle-theme">🌙 Dark Mode</button>
   </div>
+
+  <!-- Trending -->
+  <div id="trending" class="trending"></div>
 
   <!-- Search Bar -->
   <div class="search-bar">
-    <input type="text" id="search" placeholder="Search news...">
+    <input type="text" id="search" placeholder="Search news..." />
     <div id="suggestions" class="suggestions"></div>
     <button id="search-btn">Search</button>
+    <button id="favorites-btn">❤️ Favorites</button>
   </div>
 
   <!-- Categories -->
@@ -27,10 +32,22 @@
     <button data-topic="sports">⚽ Sports</button>
     <button data-topic="technology">💻 Technology</button>
     <button data-topic="entertainment">🎬 Entertainment</button>
+    <button data-topic="business">💼 Business</button>
+    <button data-topic="health">🏥 Health</button>
+    <button data-topic="science">🔬 Science</button>
   </div>
+
+  <!-- Loader -->
+  <div id="loader" class="loader hidden"></div>
 
   <!-- Main News Container -->
   <div id="news-container" class="news-container"></div>
+
+  <!-- Load More -->
+  <div class="load-more">
+    <button id="load-more-btn">Load More</button>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
