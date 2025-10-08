@@ -1,15 +1,12 @@
-const API_KEY = '5be31f1f2a562587e6e4dfe8b8b24b11';
-const BASE_URL = 'https://gnews.io/api/v4';
-
 let currentPage = 1;
 let currentQuery = '';
 let currentTopic = '';
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
 async function fetchNews(query = '', topic = '', page = 1) {
-  const url = `${BASE_URL}/top-headlines?lang=en&country=us&page=${page}${
-    query ? `&q=${query}` : ''
-  }${topic ? `&topic=${topic}` : ''}&token=${API_KEY}`;
+  const url = `/api/news?query=${encodeURIComponent(
+    query
+  )}&topic=${encodeURIComponent(topic)}&page=${page}`;
 
   toggleLoader(true);
   try {
@@ -112,8 +109,9 @@ function toggleTheme() {
     : '🌙 Dark Mode';
 }
 
+// Updated loadTrending to call serverless function
 async function loadTrending() {
-  const url = `${BASE_URL}/top-headlines?lang=en&country=us&max=5&token=${API_KEY}`;
+  const url = `/api/news?max=5`; // serverless endpoint handles trending
   try {
     const response = await axios.get(url);
     const trending = document.getElementById('trending');
